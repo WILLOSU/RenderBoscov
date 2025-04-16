@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const GeneroController_1 = require("../controllers/GeneroController");
+const router = (0, express_1.Router)();
+const generoController = new GeneroController_1.GeneroController();
+router.get('/', generoController.getAll);
+router.get('/:id', generoController.getById);
+router.post('/', generoController.create);
+router.put('/:id', generoController.update);
+router.patch('/:id/desativar', generoController.desativar);
+router.patch('/:id/reativar', generoController.reativar);
+exports.default = router;
