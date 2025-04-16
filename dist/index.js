@@ -27,6 +27,10 @@ app.use('/api', FilmeRoutes_1.default);
 app.use('/generos', GeneroRoutes_1.default);
 app.use('/avaliacao', AvaliacaoRoutes_1.default);
 app.use('/doc', SwaggerRoutes_1.default);
+// ✅ Adicionando uma rota para a raiz
+app.get("/", (req, res) => {
+    res.redirect("/doc");
+});
 // Define porta de forma segura para dev e produção
 const PORT = process.env.NODE_ENV === 'production' ? process.env.PORT : 3000;
 app.listen(PORT, () => {

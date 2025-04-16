@@ -30,7 +30,7 @@ app.use('/doc', swaggerRoute);
 
 // ✅ Adicionando uma rota para a raiz
 app.get("/", (req, res) => {
-  res.send("Servidor online 🚀");
+  res.redirect("/doc");
 });
 
 // Define porta de forma segura para dev e produção
